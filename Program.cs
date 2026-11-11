@@ -50,20 +50,153 @@
 // }
 
 
-string correctPassword = "qwerty123";
-int count = 0;
-while (true)
-{
-    Console.Write("Введите пароль от личного кабинета: ");
-    string password = Console.ReadLine();
+// string correctPassword = "qwerty123";
+// int count = 0;
+// while (true)
+// {
+//     Console.Write("Введите пароль от личного кабинета: ");
+//     string password = Console.ReadLine();
 
-    if (password == correctPassword)
+//     if (password == correctPassword)
+//     {
+//         Console.WriteLine("Доступ разрешён");
+//         break;
+//     }
+//     count++;
+//     Console.WriteLine("Неверный пароль, попробуйте снова");
+// }
+
+// Console.WriteLine($"Количество неудачных попыток: {count}");
+
+// string answer;
+
+// do
+// {
+//     Console.WriteLine("Введите дату посещения (например, 01.09): ");
+//     string date = Console.ReadLine();
+//     Console.WriteLine("Запись добавлена: {date}");
+
+//     Console.WriteLine("Добавить еще одну запись?(да/нет): ");
+//     answer = Console.ReadLine();
+// } while (answer == "да");
+// Console.WriteLine("Дневник сохранен");
+
+
+
+//Самостоятельные задания ★
+//Задачка Б
+// int count = 0;
+
+// Console.WriteLine("Вводите имена учеников (для завершения введите 'конец'):");
+// string name = Console.ReadLine();
+
+// while (name != "конец")
+// {
+//     count++;
+//     name = Console.ReadLine();
+// }
+
+// Console.WriteLine($"Всего введено имён: {count}");
+
+// //Задача Г
+// while (true)
+// {
+//     Console.Write("Введите целое число: ");
+//     int num = int.Parse(Console.ReadLine());
+//     if (num % 7 == 0)
+//     {
+//         Console.WriteLine("Найдено!");
+//         break;
+//     }
+// }
+
+
+
+// Console.Write("Введите свою фамилию: ");
+// string surname = Console.ReadLine()!.Trim();
+// if (string.IsNullOrEmpty(surname)) {
+// Console.WriteLine("Фамилия не введена. Завершение работы.");
+// return;
+// }
+// Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+// var assigned = Enumerable.Range(1, 10)
+// .OrderBy(_ => rnd.Next())
+// .Take(2)
+// .OrderBy(x => x)
+// .ToList();
+// Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+
+// // Вариант 1.
+// int N = 10;
+
+// while (N >= 1)
+// {
+//     Console.WriteLine(N);
+//     N--;
+// }
+// Console.WriteLine("Старт!");
+
+
+//Вариант 2.
+int sum = 0;
+int number;
+
+Console.WriteLine("Введите числа (0 для завершения):");
+
+do{
+    number = Convert.ToInt32(Console.ReadLine());
+
+    if (number > 0)
     {
-        Console.WriteLine("Доступ разрешён");
-        break;
+        sum += number;
     }
-    count++;
-    Console.WriteLine("Неверный пароль, попробуйте снова");
-}
 
-Console.WriteLine($"Количество неудачных попыток: {count}");
+} while (number != 0);
+
+Console.WriteLine("Сумма положительных чисел: " + sum);
+
+
+// //Дополнительное задание.Банкомат.★★★
+// int correctPin = 8888;
+// int attempts = 3;
+// bool access = false;
+
+// while (attempts > 0)
+// {
+//     Console.Write("Введите PIN-код: ");
+//     int pin = int.Parse(Console.ReadLine());
+
+//     if (pin == correctPin)
+//     {
+//         access = true;
+//         break;
+//     }
+
+//     attempts--;
+//     Console.WriteLine($"Неверный PIN. Осталось попыток: {attempts}");
+// }
+
+// if (access)
+// {
+//     int total = 0;
+
+//     while (true)
+//     {
+//         Console.Write("Введите сумму снятия (0 - завершить): ");
+//         int amount = int.Parse(Console.ReadLine());
+
+//         if (amount == 0)
+//         {
+//             break;
+//         }
+
+//         total += amount;
+//     }
+
+//     Console.WriteLine($"Итоговая снятая сумма: {total}");
+// }
+// else
+// {
+//     Console.WriteLine("Карта заблокирована");
+// }
